@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Тестовое задание</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;amp;subset=latin,cyrillic" rel="stylesheet">
+    <link href="css/normalize--min.css" rel="stylesheet">
+    <link href="css/style--min.css" rel="stylesheet">
+    <script src="js/vendor/jquery-3.2.1--min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <svg class="visually-hidden">
+      <symbol id="back" viewBox="0 0 408 408">
+        <path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"></path>
+      </symbol>
+      <symbol id="delete" viewBox="0 0 27.965 27.965">
+        <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982C27.965,6.261,21.705,0,13.98,0zM19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z" fill="#b5b5b5"></path>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 451.847 451.847">
+        <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z" fill="#b5b5b5"></path>
+      </symbol>
+      <symbol id="pencil" viewBox="0 0 459 459">
+        <path d="M0,362.1V459h96.9l280.5-283.05l-96.9-96.9L0,362.1zM451.35,102c10.2-10.2,10.2-25.5,0-35.7L392.7,7.649c-10.2-10.2-25.5-10.2-35.7,0l-45.9,45.9l96.9,96.9L451.35,102z" fill="#b5b5b5"></path>
+      </symbol>
+    </svg>
+    <header> 
+      <nav class="main-nav">
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__list">
+            <li class="main-nav__item"> <a href="#" class="main-nav__link">Новости</a></li>
+            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active">Опросы</a></li>
+            <li class="main-nav__item"> <a href="#" class="main-nav__link">Материалы</a></li>
+            <li class="main-nav__item"> <a href="#" class="main-nav__link">Сценарий</a></li>
+            <li class="main-nav__item"> <a href="#" class="main-nav__link">Назначение</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>     
+      <form action="#" method="get" class="interview-form">
+        <div class="interview-form__header">
+          <ul class="interview-form__list">
+            <li class="interview-form__item interview-form__item--not-grow"><a href="#" class="interview-form__link">Интерактивный опрос</a></li>
+            <li class="interview-form__item"> <a class="interview-form__link interview-form__link--active">Опрос</a></li>
+            <li class="interview-form__item"> <a href="#" class="interview-form__link interview-form__link--search">Поиск по опросам</a></li>
+          </ul>
+        </div>
+        <div class="interview-form__save">
+          <div class="interview-form__back-wrapper">
+            <svg width="60px" height="30px">
+              <use xlink:href="#back"></use>
+            </svg>
+          </div>
+          <div class="interview-form__save-wrapper">
+            <div class="interview-form__save-left-column">
+              <label for="testName" class="interview-form__label">Название:
+                <input id="testName" type="text" placeholder="введите название для опроса" onkeyUp="checkSaveBtn()" class="interview-form__text"><span class="interview-form__span"> 
+                  <svg id="formTextDel" width="20px" height="20px">
+                    <use xlink:href="#delete"></use>
+                  </svg></span>
+              </label>
+              <label for="testCategory" class="interview-form__label">Категория теста:
+                <select id="testCategory" class="interview-form__text">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </label>
+            </div>
+            <div class="interview-form__save-right-column">
+              <input id="saveQuestions" type="submit" value="Сохранить" disabled class="interview-form__btn interview-form__btn--save">
+              <input type="submit" value="Сохранить черновик" class="interview-form__btn interview-form__btn--save-draft">
+            </div>
+          </div>
+        </div>
+        <div class="interview-form__issues">
+          <table class="interview-form__table">
+            <tr class="interview-form__table-header">
+              <th class="interview-form__td-choice">
+                <input id="allChoice" type="checkbox" class="interview-form__checkbox-all-choice">
+                <label for="allChoice" class="interview-form__label-all-choice">Выбрать все</label>
+              </th>
+              <th class="interview-form__td-issue">Вопрос</th>
+              <th class="interview-form__td-add">
+                <input id="formBtnAdd" type="button" value="Добавить вопрос" class="interview-form__btn interview-form__btn--add">
+              </th>
+              <th class="interview-form__td-del">
+                <svg id="rowDel" width="20px" height="20px" class="interview-form__svg-choices-del">
+                  <use xlink:href="#delete"></use>
+                </svg>
+              </th>
+            </tr>
+          </table>
+        </div>
+        <div id="shadow" class="shadow"></div>
+        <div class="modal">
+          <div class="modal__header">
+            <button id="btnClose" type="button" value="Закрыть" class="modal__close"></button>
+          </div>
+          <div class="modal__name-wrapper">
+            <label for="queName" class="modal__label">Вопрос:
+              <input id="queName" type="text" placeholder="Введите название вопроса" class="modal__text"><span class="interview-form__span"> 
+                <svg id="modalTextDel" width="16px" height="16px">
+                  <use xlink:href="#delete"></use>
+                </svg></span>
+            </label>
+          </div>
+          <div class="modal__answers">
+            <label for="ansType" class="modal__label">Тип ответа:
+              <select id="ansType" onchange="ansTypeChange(this)" class="modal__text">
+                <option>Один верный</option>
+                <option>Множественный выбор</option>
+              </select>
+            </label>
+            <div class="modal__table-header">
+              <p class="modal__table-header-text">Ответы:</p>
+              <p class="modal__table-header-text modal__table-header-text--true">Верный</p>
+            </div>
+          </div>
+          <div class="modal__table-add">
+            <button id="btnAdd" type="button" class="modal__table-add-btn">+</button>
+          </div>
+          <div class="modal__btn-save-wrapper">
+            <input id="modalSave" type="button" value="Готово" class="modal__btn-save">
+            <input id="modalEditSave" type="button" value="Готово" class="modal__btn-edit-save">
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="js/script--min.js"></script>
+  </body>
+</html>

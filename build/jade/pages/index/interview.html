@@ -1,0 +1,91 @@
+
+<form action="#" method="get" class="interview-form">
+  <div class="interview-form__header">
+    <ul class="interview-form__list">
+      <li class="interview-form__item interview-form__item--not-grow"><a href="#" class="interview-form__link">Интерактивный опрос</a></li>
+      <li class="interview-form__item"> <a class="interview-form__link interview-form__link--active">Опрос</a></li>
+      <li class="interview-form__item"> <a href="#" class="interview-form__link interview-form__link--search">Поиск по опросам</a></li>
+    </ul>
+  </div>
+  <div class="interview-form__save">
+    <div class="interview-form__back-wrapper">
+      <svg width="60px" height="30px">
+        <use xlink:href="#back"></use>
+      </svg>
+    </div>
+    <div class="interview-form__save-wrapper">
+      <div class="interview-form__save-left-column">
+        <label for="testName" class="interview-form__label">Название:
+          <input id="testName" type="text" placeholder="введите название для опроса" onkeyUp="checkSaveBtn()" class="interview-form__text"/><span class="interview-form__span"> 
+            <svg id="formTextDel" width="20px" height="20px">
+              <use xlink:href="#delete"></use>
+            </svg></span>
+        </label>
+        <label for="testCategory" class="interview-form__label">Категория теста:
+          <select id="testCategory" class="interview-form__text">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </label>
+      </div>
+      <div class="interview-form__save-right-column">
+        <input id="saveQuestions" type="submit" value="Сохранить" disabled="disabled" class="interview-form__btn interview-form__btn--save"/>
+        <input type="submit" value="Сохранить черновик" class="interview-form__btn interview-form__btn--save-draft"/>
+      </div>
+    </div>
+  </div>
+  <div class="interview-form__issues">
+    <table class="interview-form__table">
+      <tr class="interview-form__table-header">
+        <th class="interview-form__td-choice">
+          <input id="allChoice" type="checkbox" class="interview-form__checkbox-all-choice"/>
+          <label for="allChoice" class="interview-form__label-all-choice">Выбрать все</label>
+        </th>
+        <th class="interview-form__td-issue">Вопрос</th>
+        <th class="interview-form__td-add">
+          <input id="formBtnAdd" type="button" value="Добавить вопрос" class="interview-form__btn interview-form__btn--add"/>
+        </th>
+        <th class="interview-form__td-del">
+          <svg id="rowDel" width="20px" height="20px" class="interview-form__svg-choices-del">
+            <use xlink:href="#delete"></use>
+          </svg>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <div id="shadow" class="shadow"></div>
+  <div class="modal">
+    <div class="modal__header">
+      <button id="btnClose" type="button" value="Закрыть" class="modal__close"></button>
+    </div>
+    <div class="modal__name-wrapper">
+      <label for="queName" class="modal__label">Вопрос:
+        <input id="queName" type="text" placeholder="Введите название вопроса" class="modal__text"/><span class="interview-form__span"> 
+          <svg id="modalTextDel" width="16px" height="16px">
+            <use xlink:href="#delete"></use>
+          </svg></span>
+      </label>
+    </div>
+    <div class="modal__answers">
+      <label for="ansType" class="modal__label">Тип ответа:
+        <select id="ansType" onchange="ansTypeChange(this)" class="modal__text">
+          <option>Один верный</option>
+          <option>Множественный выбор</option>
+        </select>
+      </label>
+      <div class="modal__table-header">
+        <p class="modal__table-header-text">Ответы:</p>
+        <p class="modal__table-header-text modal__table-header-text--true">Верный</p>
+      </div>
+    </div>
+    <div class="modal__table-add">
+      <button id="btnAdd" type="button" class="modal__table-add-btn">+</button>
+    </div>
+    <div class="modal__btn-save-wrapper">
+      <input id="modalSave" type="button" value="Готово" class="modal__btn-save"/>
+      <input id="modalEditSave" type="button" value="Готово" class="modal__btn-edit-save"/>
+    </div>
+  </div>
+</form>

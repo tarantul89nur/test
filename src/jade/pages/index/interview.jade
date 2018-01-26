@@ -1,0 +1,64 @@
+form.interview-form(action="#", method="get")
+  .interview-form__header
+    ul.interview-form__list
+      li.interview-form__item.interview-form__item--not-grow
+        a.interview-form__link(href="#") Интерактивный опрос
+      li.interview-form__item 
+        a.interview-form__link.interview-form__link--active Опрос
+      li.interview-form__item 
+        a.interview-form__link.interview-form__link--search(href="#") Поиск по опросам
+  .interview-form__save
+    .interview-form__back-wrapper
+      svg(width="60px", height="30px")
+        use(xlink:href="#back")
+    .interview-form__save-wrapper
+      .interview-form__save-left-column
+        label.interview-form__label(for="testName") Название:
+          input.interview-form__text#testName(type="text", placeholder="введите название для опроса", onkeyUp="checkSaveBtn()")
+          span.interview-form__span 
+            svg#formTextDel(width="20px", height="20px")
+              use(xlink:href="#delete")
+        label.interview-form__label(for="testCategory") Категория теста:
+          select.interview-form__text#testCategory
+            option 1
+            option 2
+            option 3
+            option 4
+      .interview-form__save-right-column
+        input.interview-form__btn.interview-form__btn--save#saveQuestions(type="submit", value="Сохранить" disabled)
+        input.interview-form__btn.interview-form__btn--save-draft(type="submit", value="Сохранить черновик")
+  .interview-form__issues
+    table.interview-form__table
+      tr.interview-form__table-header
+        th.interview-form__td-choice
+          input.interview-form__checkbox-all-choice#allChoice(type="checkbox")
+          label.interview-form__label-all-choice(for="allChoice") Выбрать все
+        th.interview-form__td-issue Вопрос
+        th.interview-form__td-add
+          input.interview-form__btn.interview-form__btn--add#formBtnAdd(type="button", value="Добавить вопрос")
+        th.interview-form__td-del
+          svg.interview-form__svg-choices-del#rowDel(width="20px", height="20px")
+            use(xlink:href="#delete")
+  .shadow#shadow
+  .modal
+    .modal__header
+      button.modal__close#btnClose(type="button", value="Закрыть")
+    .modal__name-wrapper
+      label.modal__label(for="queName") Вопрос:
+        input.modal__text#queName(type="text", placeholder="Введите название вопроса")
+        span.interview-form__span 
+          svg#modalTextDel(width="16px", height="16px")
+            use(xlink:href="#delete")
+    .modal__answers
+      label.modal__label(for="ansType") Тип ответа:
+        select.modal__text#ansType(onchange="ansTypeChange(this)")
+          option Один верный
+          option Множественный выбор
+      .modal__table-header
+        p.modal__table-header-text Ответы:
+        p.modal__table-header-text.modal__table-header-text--true Верный
+    .modal__table-add
+      button.modal__table-add-btn#btnAdd(type="button") +
+    .modal__btn-save-wrapper
+      input.modal__btn-save#modalSave(type="button", value="Готово")
+      input.modal__btn-edit-save#modalEditSave(type="button", value="Готово")

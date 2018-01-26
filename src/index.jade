@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Тестовое задание
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+    meta(name='format-detection' content='telephone=no')
+
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin,cyrillic', rel='stylesheet')
+    link(href='css/normalize--min.css', rel='stylesheet')
+    link(href='css/style--min.css', rel='stylesheet')
+    script(src='js/vendor/jquery-3.2.1--min.js' type='text/javascript')
+    
+  body
+    include jade/pages/index/svg
+    
+    header  
+      include jade/partials/header
+      
+    main      
+      include jade/pages/index/interview
+      
+    script(src="js/script--min.js")
