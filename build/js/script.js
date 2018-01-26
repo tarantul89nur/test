@@ -101,7 +101,7 @@ $('#rowDel').click(function () {
 });
 
 //Функция удаления вариантов ответов
-function remove(Element){
+function removeAsk(Element){
   $(Element).parent().remove();
   numbering();
 };
@@ -114,7 +114,7 @@ function removeQue(Element){
 
 //Функция добавления вариантов ответов
 function addAnswer(){
-  $('.modal__answers').append('<div class="modal__table-item"><span class="modal__table-item-number"></span><input type="text" class="modal__table-item-text"><input type="radio" value="" name="answer" class="modal__table-item-radio" onchange="inputTrue();"><label class="modal__table-item-label-radio">Выбрать</label><input type="checkbox" value="" class="modal__table-item-checkbox" onchange="inputTrue();"><label class="modal__table-item-label-checkbox">Выбрать</label><input type="text" class="modal__table-item-true"><span class="modal__span" onclick="remove(this)"><svg width="20px" height="20px" class="modal__svg-del"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete"></use></svg></span></div>');
+  $('.modal__answers').append('<div class="modal__table-item"><span class="modal__table-item-number"></span><input type="text" class="modal__table-item-text"><input type="radio" value="" name="answer" class="modal__table-item-radio" onchange="inputTrue();"><label class="modal__table-item-label-radio">Выбрать</label><input type="checkbox" value="" class="modal__table-item-checkbox" onchange="inputTrue();"><label class="modal__table-item-label-checkbox">Выбрать</label><input type="text" class="modal__table-item-true"><span class="modal__span" onclick="removeAsk(this)"><svg width="20px" height="20px" class="modal__svg-del"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete"></use></svg></span></div>');
 };
 
 //Функция скрытия радио/чекбоксов в зависимости от выбранного типа ответа
